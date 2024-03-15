@@ -11,7 +11,7 @@ final class CursoController
         echo "Listar";
     }
 
-    public function add(): void
+    public function adicionar(): void
     {
         echo "<marquee>Adicionar</marquee>";
     }

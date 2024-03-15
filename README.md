@@ -22,7 +22,7 @@ Agora entre na pasta com o terminal
 E agora basta rodar o docker
 
 `docker-compose up -d`
-
+`composer dump`
 Pronto,é sucesso!
 
 Acesse o http://localhost:8080
