@@ -1,0 +1,1 @@
+<h1>Editar curso</h1>
