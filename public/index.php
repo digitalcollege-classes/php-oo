@@ -6,12 +6,18 @@ $routes = include "../config/routes.php";
 
 $url = $_SERVER['REQUEST_URI'];
 
-if (false === isset($routes[$url])) {
+$controllerFound = false;
+
+foreach ($routes as $controller => $actions) {
+    if (isset($actions[$url])) {
+        $controllerFound = true;
+        $method = $actions[$url];
+        (new $controller())->$method();
+        break;
+    }
+}
+
+if (!$controllerFound) {
     header('location: /erro-404');
     exit;
 }
-
-$controller = $routes[$url][0];
-$method = $routes[$url][1];
-
-(new $controller())->$method();

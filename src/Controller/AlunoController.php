@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-final class CursoController
+final class AlunoController
 {
     public function listar(): void
     {
@@ -24,10 +24,5 @@ final class CursoController
     public function excluir(): void
     {
         echo "Excluir";
-    }
-
-    public function alunos(): void 
-    {
-        echo "Alunos";
     }
 }
