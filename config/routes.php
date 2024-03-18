@@ -19,10 +19,11 @@ return [
     // Rotas do CursoController
     CursoController::class => [
         'cursos' => [
-        '/listar' => 'listar',
-        '/adicionar' => 'add',
-        '/editar' => 'editar',
-        '/excluir' => 'excluir',
-        '/alunos' => 'alunos',
-    ]],
+            '/listar' => 'listar',
+            '/adicionar' => 'add',
+            '/editar' => 'editar',
+            '/excluir' => 'excluir',
+            '/alunos' => 'alunos',
+        ]   
+    ],
 ];

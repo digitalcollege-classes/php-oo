@@ -25,4 +25,9 @@ final class CursoController
     {
         echo "Excluir";
     }
+
+    public function alunos(): void
+    {
+        echo "alunos";
+    }
 }
