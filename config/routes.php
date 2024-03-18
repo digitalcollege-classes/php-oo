@@ -3,6 +3,7 @@
 use App\Controller\CursoController;
 use App\Controller\HomeController;
 use App\Controller\ErrorController;
+use App\Controller\AlunoController; 
 use App\Entity\Curso;
 
 return [
@@ -26,4 +27,17 @@ return [
             '/alunos' => 'alunos',
         ]   
     ],
+
+    // Rotas do AlunoController
+    AlunoController::class => [
+        'aluno' => [
+            '/matricula' => 'matricula',
+            '/nome' => 'nome',
+            '/curso' => 'curso',
+            '/turno' => 'turno',
+            '/notas' => 'notas',
+        ]
+    ],
 ];
+
+?>
