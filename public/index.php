@@ -3,6 +3,7 @@
 require_once "../vendor/autoload.php";
 
 use App\Controller\CursoController;
+use App\Controller\AlunoController; 
 
 $routes = include "../config/routes.php";
 
@@ -19,6 +20,16 @@ foreach ($routes as $controller => $actions) {
             $controllerFound = true;
             $method = $actions['cursos'][$rota];
             (new CursoController())->$method();
+            break;
+        }
+    } elseif ($controller === AlunoController::class && isset($actions['aluno'])) { 
+        $prefixo = '/aluno'; 
+        $rota = substr($url, strlen($prefixo));
+
+        if (isset($actions['aluno'][$rota])) {
+            $controllerFound = true;
+            $method = $actions['aluno'][$rota];
+            (new AlunoController())->$method();
             break;
         }
     } elseif (isset($actions[$url])) {
