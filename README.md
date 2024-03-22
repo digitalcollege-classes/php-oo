@@ -14,15 +14,15 @@ Essa estrutura já está dockerizada, então basta ter o docker compose rodando 
 
 Primeiro basta clonar o repositório
 
-`git clone bla bla bla`
+`git clone https://github.com/digitalcollege-classes/php-oo`
 
 Agora entre na pasta com o terminal 
-`cd setup-php-docker`
+`cd php-oo`
 
 E agora basta rodar o docker
 
 `docker-compose up -d`
-
+`composer dump`
 Pronto,é sucesso!
 
 Acesse o http://localhost:8080

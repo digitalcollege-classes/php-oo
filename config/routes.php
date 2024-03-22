@@ -4,15 +4,28 @@ use App\Controller\CursoController;
 use App\Controller\HomeController;
 use App\Controller\ErrorController;
 
-return [
-    // url a ser acessada => [Controller, metodo]
-    '/' => [HomeController::class, 'index'],
+$cursoController = CursoController::class;
 
+$prefix = '/cursos';
 
-    '/erro-404' => [ErrorController::class, 'notFound'],
-
-    '/cursos/listar' => [CursoController::class, 'listar'],
-    '/cursos/adicionar' => [CursoController::class, 'add'],
-    '/cursos/editar' => [CursoController::class, 'editar'],
-    '/cursos/excluir' => [CursoController::class, 'excluir'],
+$cursoRoutes = [
+    'listar',
+    'adicionar',
+    'editar',
+    'excluir'
 ];
+
+$cursosRoutes = [];
+
+foreach ($cursoRoutes as $method) {
+    $cursosRoutes[$prefix . '/' . $method] = [$cursoController, $method];
+}
+
+$routes = [
+    '/' => [HomeController::class, 'index'],
+    '/erro-404' => [ErrorController::class, 'notFound'],
+];
+
+$NewRoutes = array_merge($routes, $cursosRoutes);
+
+return $NewRoutes;
