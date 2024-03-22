@@ -34,4 +34,9 @@ final class CursoController extends AbstractController
     {
         echo "Excluir";
     }
+
+    public function alunos(): void
+    {
+        echo "alunos";
+    }
 }

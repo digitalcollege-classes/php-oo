@@ -3,16 +3,41 @@
 use App\Controller\CursoController;
 use App\Controller\HomeController;
 use App\Controller\ErrorController;
+use App\Controller\AlunoController; 
+use App\Entity\Curso;
 
 return [
-    // url a ser acessada => [Controller, metodo]
-    '/' => [HomeController::class, 'index'],
+    // Rotas do HomeController
+    HomeController::class => [
+        '/' => 'index',
+    ],
 
+    // Rotas do ErrorController
+    ErrorController::class => [
+        '/erro-404' => 'notFound',
+    ],
 
-    '/erro-404' => [ErrorController::class, 'notFound'],
+    // Rotas do CursoController
+    CursoController::class => [
+        'cursos' => [
+            '/listar' => 'listar',
+            '/adicionar' => 'add',
+            '/editar' => 'editar',
+            '/excluir' => 'excluir',
+            '/alunos' => 'alunos',
+        ]   
+    ],
 
-    '/cursos/listar' => [CursoController::class, 'listar'],
-    '/cursos/adicionar' => [CursoController::class, 'add'],
-    '/cursos/editar' => [CursoController::class, 'editar'],
-    '/cursos/excluir' => [CursoController::class, 'excluir'],
+    // Rotas do AlunoController
+    AlunoController::class => [
+        'aluno' => [
+            '/matricula' => 'matricula',
+            '/nome' => 'nome',
+            '/curso' => 'curso',
+            '/turno' => 'turno',
+            '/notas' => 'notas',
+        ]
+    ],
 ];
+
+?>
