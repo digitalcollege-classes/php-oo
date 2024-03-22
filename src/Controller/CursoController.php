@@ -4,11 +4,20 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-final class CursoController
+use App\Entity\Curso;
+
+final class CursoController extends AbstractController
 {
     public function listar(): void
     {
-        echo "Listar";
+        $cursos = [
+            new Curso('PHP'),
+            new Curso('Javascript'),
+        ];
+
+        parent::render('curso/listar', [
+            'cursos' => $cursos,
+        ]);
     }
 
     public function add(): void
