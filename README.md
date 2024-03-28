@@ -17,9 +17,13 @@ Primeiro basta clonar o repositório
 `git clone bla bla bla`
 
 Agora entre na pasta com o terminal 
-`cd setup-php-docker`
+`cd php-oo`
 
 E agora basta rodar o docker
+
+`docker rm setup-php -f`
+`docker rm setup-nginx -f`
+`docker rm setup-mysql -f`
 
 `docker-compose up -d`
 

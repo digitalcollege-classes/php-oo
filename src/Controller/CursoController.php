@@ -15,6 +15,8 @@ final class CursoController extends AbstractController
             new Curso('Javascript'),
         ];
 
+        // SELECT * FROM tb_cursos
+
         parent::render('curso/listar', [
             'cursos' => $cursos,
         ]);
