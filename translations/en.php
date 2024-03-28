@@ -9,5 +9,6 @@ return [
     'table-actions' => 'Actions',
     'button-edit' => 'Edit',
     'button-delete' => 'Delete',
+    'page-title' => 'Title',
 ];
 
