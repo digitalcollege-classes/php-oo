@@ -11,9 +11,13 @@
     </div>
     <div class="col">
         <form>
-            <select name="" id="" class="form-select" style="float: right; width: 100px;">
-                <option value="pt-br">PT-BR</option>
-                <option value="en">EN</option>
+            <select name="" id="select-lang" class="form-select" style="float: right; width: 100px;">
+                <?php
+                    $lang = $_SESSION['language'] ?? 'pt-br';
+                ?>
+            
+                <option <?php echo $lang === 'pt-br'?'selected':'' ?> value="pt-br">PT-BR</option>
+                <option <?php echo $lang === 'en'?'selected':'' ?> value="en">EN</option>
             </select>
         </form>
     </div>

@@ -3,6 +3,7 @@
 use App\Controller\CursoController;
 use App\Controller\HomeController;
 use App\Controller\ErrorController;
+use App\Controller\TranslateController;
 
 return [
     // url a ser acessada => [Controller, metodo]
@@ -10,6 +11,8 @@ return [
 
 
     '/erro-404' => [ErrorController::class, 'notFound'],
+
+    '/translate' => [TranslateController::class, 'translate'],
 
     '/cursos/listar' => [CursoController::class, 'listar'],
     '/cursos/adicionar' => [CursoController::class, 'add'],

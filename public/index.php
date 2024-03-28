@@ -2,11 +2,13 @@
 
 include "../vendor/autoload.php";
 
+session_start();
+
 $routes = include "../config/routes.php";
 
 // ----------------------------------------------------------
 //TODO: Mover essa configuracao pra outro lugar
-$lang = 'en';
+$lang = $_SESSION['language'] ?? 'pt-br';
 
 $translations = include "../translations/{$lang}.php";
 
@@ -19,7 +21,7 @@ function translate(string $key): string
 }
 // -----------------------------------------------------------
 
-$url = $_SERVER['REQUEST_URI'];
+$url = explode('?', $_SERVER['REQUEST_URI'])[0];
 
 if (false === isset($routes[$url])) {
     header('location: /erro-404');
