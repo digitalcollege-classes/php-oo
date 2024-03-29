@@ -10,5 +10,7 @@ return [
     'button-edit' => 'Edit',
     'button-delete' => 'Delete',
     'page-title' => 'Title',
+    'text-confirm' => 'Ok',
+    'input-type-here' => 'Type here',
 ];
 

@@ -1,33 +1,28 @@
 <?php
 
-include "../vendor/autoload.php";
-
-use App\Controller\CursoController;
-
-// $c = new CursoController();
-// $c->listar();
+interface Validator
+{
+    public function validateRequest(string $flag): array;
+}
 
 
-$x = CursoController::class;
+class CursoValidator
+{
+    public function validar(): array
+    {
+        return [];
+    }
+}
 
-<Routes>
-    <Route path="/listar" element={<CursosListar/>} />
-</Routes>
-
-
-
-$routes = [
-    '/cursos/listar' => [CursoController::class, 'listar'],
-    '/cursos/adicionar' => [CursoController::class, 'add'],
-    '/cursos/editar' => [CursoController::class, 'editar'],
-    
-    '/alunos/listar' => [AlunoController::class, 'listar'], 
-];
-
-$params = $routes['/cursos/listar'];
-$controller = $params[0];
-$method = $params[1];
+class ProfessorValidator implements Validator
+{
+    public function validateRequest(): array
+    {
+        return [
+            'teste'
+        ];
+    }
+}
 
 
-(new $controller())->$method();
-// (new CursoController())->listar();
+var_dump((new ProfessorValidator())->validacao());

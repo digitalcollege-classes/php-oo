@@ -10,5 +10,7 @@ return [
     'button-edit' => 'Editar',
     'button-delete' => 'Excluir',
     'page-title' => 'Inicio',
+    'text-confirm' => 'Pronto',
+    'input-type-here' => 'Digite aqui',
 ];
 
