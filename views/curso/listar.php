@@ -13,7 +13,7 @@
 
                 echo "
                     <tr>
-                        <td>{$cada->nome}</td>
+                        <td>{$cada->name}</td>
                         <td>
                             <a href='' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
                             <a href='' class='btn btn-danger btn-sm'>{$buttonDelete}</a>

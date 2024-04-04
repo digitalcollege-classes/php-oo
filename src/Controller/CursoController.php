@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Curso;
 use App\Validator\CursoValidator;
+use PDO;
 
 final class CursoController extends AbstractController
 {
@@ -18,12 +19,17 @@ final class CursoController extends AbstractController
 
     public function listar(): void
     {
-        $cursos = [
-            new Curso('PHP'),
-            new Curso('Javascript'),
-        ];
+        $conexao = new PDO(
+            'mysql:host=setup-mysql;dbname=db_name',
+            'user',
+            'password'
+        );
 
-        // SELECT * FROM tb_cursos
+        $sql = "SELECT * FROM course";
+
+        $cursos = $conexao->query($sql);
+
+        $cursos = $cursos->fetchAll(PDO::FETCH_OBJ);
 
         parent::render('curso/listar', [
             'cursos' => $cursos,
