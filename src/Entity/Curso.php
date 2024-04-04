@@ -6,9 +6,17 @@ namespace App\Entity;
 
 class Curso
 {
-    public function __construct(
-        public string $nome
-    ) {
+    #[@Column()]
+    public int $id;
+    
+    #[@Column()]
+    public string $name;
 
-    }
+    #[@Column()]
+    public string $description;
+
+
+    // public function __construct(string $name) {
+    //     $this->name = $name;
+    // }
 }

@@ -29,7 +29,7 @@ final class CursoController extends AbstractController
 
         $cursos = $conexao->query($sql);
 
-        $cursos = $cursos->fetchAll(PDO::FETCH_OBJ);
+        $cursos = $cursos->fetchAll(PDO::FETCH_CLASS, Curso::class);
 
         parent::render('curso/listar', [
             'cursos' => $cursos,
