@@ -4,15 +4,22 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Table;
+
+#[Entity()] #[Table(name: 'course')]
 class Curso
 {
-    #[@Column()]
+    #[Id] #[GeneratedValue] #[Column(type: 'integer')]
     public int $id;
     
-    #[@Column()]
+    #[Column(length: 30, nullable: false)]
     public string $name;
 
-    #[@Column()]
+    #[Column]
     public string $description;
 
 
