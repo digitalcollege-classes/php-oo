@@ -19,20 +19,12 @@ final class CursoController extends AbstractController
 
     public function listar(): void
     {
-        $conexao = new PDO(
-            'mysql:host=setup-mysql;dbname=db_name',
-            'user',
-            'password'
-        );
+        $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
 
-        $sql = "SELECT * FROM course";
-
-        $cursos = $conexao->query($sql);
-
-        $cursos = $cursos->fetchAll(PDO::FETCH_CLASS, Curso::class);
+        $repository = $entityManager->getRepository(Curso::class);
 
         parent::render('curso/listar', [
-            'cursos' => $cursos,
+            'cursos' => $repository->findAll(),
         ]);
     }
 
@@ -52,10 +44,17 @@ final class CursoController extends AbstractController
             return;
         }
 
-        echo "Ok, inserindo";
-        var_dump($errors);
-        //rule
-        //sql
+        $curso = new Curso();
+        $curso->name = $_POST['name'];
+        $curso->description = $_POST['description'];
+
+        $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
+
+        //INSERT INTO
+        $entityManager->persist($curso);
+        $entityManager->flush();
+
+        header('location: /cursos/listar');
     }
 
     public function editar(): void

@@ -17,8 +17,8 @@ class Disciplina
     public int $id;
 
     #[Column(length: 30)]
-    public string $nome;
+    public string $name;
 
     #[Column(type: 'integer')]
-    public int $cargaHoraria;
+    public int $workload;
 }
