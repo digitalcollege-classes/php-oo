@@ -6,7 +6,7 @@
             <th><?=translate('student-cpf')?></th>
             <th><?=translate('student-email')?></th>
             <th><?=translate('student-created_at')?></th>
-            <th><?=translate('actions')?></th>
+            <th><?=translate('table-actions')?></th>
         </tr>
     </thead>
     <tbody>

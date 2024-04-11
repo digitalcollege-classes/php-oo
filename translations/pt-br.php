@@ -13,5 +13,12 @@ return [
     'text-confirm' => 'Pronto',
     'input-type-here' => 'Digite aqui',
     'new-course' => 'Novo Curso',
+    'course-description' => 'Descrição',
+    'status' => "Status",
+    'student-name' => 'Nome',
+    'student-registry' => 'Matrícula',
+    'student-cpf' => 'CPF',
+    'student-email' => 'E-mail',
+    'student-created_at' => 'Data da Matrícula'
 ];
 
