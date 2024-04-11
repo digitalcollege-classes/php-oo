@@ -2,8 +2,9 @@
     <thead class="table-dark">
         <tr>
             <th><?=translate('course-name')?></th>
-            <th><?=translate('table-actions')?></th>
             <th><?=translate('description')?></th>
+            <th><?=translate('status')?></th>
+            <th><?=translate('table-actions')?></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
                     <tr>
                         <td>{$cada->name}</td>
                         <td>{$cada->description}</td>
+                        <td>{$cada->status}</td>
                         <td>
                             <a href='' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
                             <a href='' class='btn btn-danger btn-sm'>{$buttonDelete}</a>
