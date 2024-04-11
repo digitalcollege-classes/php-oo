@@ -6,22 +6,22 @@ namespace App\Controller;
 
 use App\Entity\Curso;
 use App\Validator\CursoValidator;
-use PDO;
 
 final class CursoController extends AbstractController
 {
     public CursoValidator $validator;
+    public mixed $entityManager;
 
     public function __construct()
     {
         $this->validator = new CursoValidator();
+        $this->entityManager = parent::entityManager();
     }
 
     public function listar(): void
     {
-        $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
 
-        $repository = $entityManager->getRepository(Curso::class);
+        $repository = $this->entityManager->getRepository(Curso::class);
 
         parent::render('curso/listar', [
             'cursos' => $repository->findAll(),
@@ -48,11 +48,10 @@ final class CursoController extends AbstractController
         $curso->name = $_POST['name'];
         $curso->description = $_POST['description'];
 
-        $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
 
         //INSERT INTO
-        $entityManager->persist($curso);
-        $entityManager->flush();
+        $this->entityManager->persist($curso);
+        $this->entityManager->flush();
 
         header('location: /cursos/listar');
     }
@@ -65,12 +64,11 @@ final class CursoController extends AbstractController
     public function excluir(): void
     {
         $id = $_GET['id'];
-        $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
-        $curso = $entityManager->find(Curso::class, $id);
+        $curso = $this->entityManager->find(Curso::class, $id);
 
         if($curso !== null) {
-            $entityManager->remove($curso);
-            $entityManager->flush();
+            $this->entityManager->remove($curso);
+            $this->entityManager->flush();
         }
 
         header('location: /cursos/listar');
