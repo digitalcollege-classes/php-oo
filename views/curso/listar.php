@@ -18,7 +18,7 @@
                         <td>{$cada->description}</td>
                         <td>
                             <a href='' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
-                            <a href='/cursos/excluir?id={$cada->id}' class='btn btn-danger btn-sm'>{$buttonDelete}</a>
+                            <a href='/cursos/excluir?id={$cada->id}' onclick='return confirmDelete()'  class='btn btn-danger btn-sm'>{$buttonDelete}</a>
                         </td>
                     </tr>
                 ";
@@ -26,3 +26,9 @@
         ?>
     </tbody>
 </table>
+<script>
+    function confirmDelete() {
+        return confirm("Tem certeza que deseja excluir este curso?");
+    }
+    
+</script>
