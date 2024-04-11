@@ -10,16 +10,8 @@ class CursoValidator implements Validator
     {
         $errors = [];
 
-        $outputName = strip_tags($_POST['name']);
-        $outputDescription = strip_tags($_POST['description']);
-
-        if ($outputName !== $_POST['name']) {
-            $errors[] = "Erro, caracteres invalidos no nome";
-        }
-
-        if ($outputDescription !== $_POST['description']) {
-            $errors[] = "Erro, caracteres invalidos na descricao";
-        }
+        $_POST['name'] = strip_tags($_POST['name']);
+        $_POST['description'] = strip_tags($_POST['description']);
 
         if (0 === strlen(trim($_POST['name']))) {
             $errors[] = "Erro, nome invalido";
