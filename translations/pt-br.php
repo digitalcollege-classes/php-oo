@@ -11,6 +11,7 @@ return [
     'button-delete' => 'Excluir',
     'page-title' => 'Inicio',
     'text-confirm' => 'Pronto',
+    'text-save' => 'Salvar',
     'input-type-here' => 'Digite aqui',
 ];
 

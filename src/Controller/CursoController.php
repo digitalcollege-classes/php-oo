@@ -58,9 +58,33 @@ final class CursoController extends AbstractController
     }
 
     public function editar(): void
-    {
-        echo "Editar";
+{
+
+    $id = $_GET['id'];
+    $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
+
+    if (true === empty($_POST)) {                          
+        $curso = $entityManager->find(Curso::class, $id);        
+        parent::render('curso/editar', [
+            'curso' => $curso,
+        ]);      
+        return;  
     }
+
+    $curso = $entityManager->find(Curso::class, $id);
+    $curso->name = $_POST['name'];
+    $curso->description = $_POST['description'];
+
+    $entityManager->persist($curso);
+    $entityManager->flush();
+
+    header('location: /cursos/listar');
+
+
+       
+
+    
+}
 
     public function excluir(): void
     {
