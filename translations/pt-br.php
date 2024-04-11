@@ -12,5 +12,6 @@ return [
     'page-title' => 'Inicio',
     'text-confirm' => 'Pronto',
     'input-type-here' => 'Digite aqui',
+    'new-course' => 'Novo Curso',
 ];
 

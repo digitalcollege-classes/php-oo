@@ -12,5 +12,6 @@ return [
     'page-title' => 'Title',
     'text-confirm' => 'Ok',
     'input-type-here' => 'Type here',
+    'new-course' => 'New Course',
 ];
 
