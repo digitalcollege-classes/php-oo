@@ -12,7 +12,7 @@ final class AlunoController extends AbstractController
 
     public function listar(): void
     {
-        $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
+        $entityManager = parent::entityManager();
 
         $repository = $entityManager->getRepository(Aluno::class);
 
