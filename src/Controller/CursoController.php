@@ -64,6 +64,15 @@ final class CursoController extends AbstractController
 
     public function excluir(): void
     {
-        echo "Excluir";
+        $id = $_GET['id'];
+        $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
+        $curso = $entityManager->find(Curso::class, $id);
+
+        if($curso !== null) {
+            $entityManager->remove($curso);
+            $entityManager->flush();
+        }
+
+        header('location: /cursos/listar');
     }
 }
