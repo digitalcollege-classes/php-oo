@@ -20,4 +20,5 @@ return [
     '/cursos/editar' => [CursoController::class, 'editar'],
     '/cursos/excluir' => [CursoController::class, 'excluir'],
     '/alunos/listar' => [AlunoController::class, 'listar'],
+    '/api/cursos' => [CursoController::class, 'apiListar'],
 ];
