@@ -6,7 +6,7 @@
     <thead class="table-dark">
         <tr>
             <th><?=translate('course-name')?></th>
-            <th><?=translate('description')?></th>
+            <th><?=translate('course-description')?></th>
             <th><?=translate('status')?></th>
             <th><?=translate('table-actions')?></th>
         </tr>
