@@ -22,6 +22,10 @@ class Curso
     #[Column]
     public string $description;
 
+    #[Column(type: 'boolean')]
+    public bool $status;
+
+
 
     // public function __construct(string $name) {
     //     $this->name = $name;

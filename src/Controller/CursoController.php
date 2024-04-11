@@ -47,6 +47,7 @@ final class CursoController extends AbstractController
         $curso = new Curso();
         $curso->name = $_POST['name'];
         $curso->description = $_POST['description'];
+        $curso->status = (bool) $_POST['status'];
 
 
         //INSERT INTO
