@@ -16,13 +16,20 @@
         <?php
             foreach ($cursos ?? [] as $cada) {
                 $buttonEdit = translate('button-edit');
-                $buttonDelete = translate('button-delete');
+                $buttonDelete = translate('button-delete'); 
+                if ($cada->status === true) {
+                    $label = translate('active');
+                    $label = "<span class='badge text-bg-success'>{$label}</span>";
+                } else {
+                    $label = translate('inactive');
+                    $label = "<span class='badge text-bg-danger'>{$label}</span>";
+                }
 
                 echo "
                     <tr>
                         <td>{$cada->name}</td>
                         <td>{$cada->description}</td>
-                        <td>{$cada->status}</td>
+                        <td>{$label}</td>
                         <td>
                             <a href='' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
                             <a href='/cursos/excluir?id={$cada->id}' class='btn btn-danger btn-sm'>{$buttonDelete}</a>

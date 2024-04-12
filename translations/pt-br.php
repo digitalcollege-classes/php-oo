@@ -13,5 +13,7 @@ return [
     'text-confirm' => 'Pronto',
     'input-type-here' => 'Digite aqui',
     'new-course' => 'Novo Curso',
+    'active'=>'Ativo',
+    'inactive'=>'Inativo',
 ];
 
