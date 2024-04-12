@@ -37,7 +37,7 @@ final class CursoController extends AbstractController
 
         $errors = $this->validator->validateRequest();
 
-        if (false === empty($errors)) {    
+        if (false === empty($errors)) {
             $_SESSION['errors'] = $errors;
 
             parent::render('curso/add');
@@ -59,7 +59,25 @@ final class CursoController extends AbstractController
 
     public function editar(): void
     {
-        echo "Editar";
+
+        $id = $_GET['id'];
+
+        if (true === empty($_POST)) {
+            $curso = $this->entityManager->find(Curso::class, $id);
+            parent::render('curso/editar', [
+                'curso' => $curso,
+            ]);
+            return;
+        }
+
+        $curso = $this->entityManager->find(Curso::class, $id);
+        $curso->name = $_POST['name'];
+        $curso->description = $_POST['description'];
+
+        $this->entityManager->persist($curso);
+        $this->entityManager->flush();
+
+        parent::redirect('/cursos/listar');
     }
 
     public function excluir(): void
@@ -67,7 +85,7 @@ final class CursoController extends AbstractController
         $id = $_GET['id'];
         $curso = $this->entityManager->find(Curso::class, $id);
 
-        if($curso !== null) {
+        if ($curso !== null) {
             $this->entityManager->remove($curso);
             $this->entityManager->flush();
         }
