@@ -6,7 +6,7 @@
     <thead class="table-dark">
         <tr>
             <th><?=translate('course-name')?></th>
-            <th><?=translate('description')?></th>
+            <th><?=translate('course-description')?></th>
             <th><?=translate('status')?></th>
             <th><?=translate('table-actions')?></th>
         </tr>
@@ -32,7 +32,7 @@
                         <td>{$label}</td>
                         <td>
                             <a href='' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
-                            <a href='/cursos/excluir?id={$cada->id}' class='btn btn-danger btn-sm'>{$buttonDelete}</a>
+                            <a href='/cursos/excluir?id={$cada->id}' onclick='return confirmDelete()'  class='btn btn-danger btn-sm'>{$buttonDelete}</a>
                         </td>
                     </tr>
                 ";
@@ -40,3 +40,9 @@
         ?>
     </tbody>
 </table>
+<script>
+    function confirmDelete() {
+        return confirm("Tem certeza que deseja excluir este curso?");
+    }
+    
+</script>

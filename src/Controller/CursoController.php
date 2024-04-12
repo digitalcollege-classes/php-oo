@@ -54,7 +54,7 @@ final class CursoController extends AbstractController
         $this->entityManager->persist($curso);
         $this->entityManager->flush();
 
-        header('location: /cursos/listar');
+        parent::redirect("/cursos/listar");
     }
 
     public function editar(): void
@@ -72,6 +72,6 @@ final class CursoController extends AbstractController
             $this->entityManager->flush();
         }
 
-        header('location: /cursos/listar');
+        parent::redirect("/cursos/listar");
     }
 }

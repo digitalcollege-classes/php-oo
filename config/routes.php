@@ -5,6 +5,7 @@ use App\Controller\HomeController;
 use App\Controller\ErrorController;
 use App\Controller\TranslateController;
 use App\Controller\AlunoController;
+use App\Controller\Api\CursoApiController;
 
 return [
     // url a ser acessada => [Controller, metodo]
@@ -20,4 +21,5 @@ return [
     '/cursos/editar' => [CursoController::class, 'editar'],
     '/cursos/excluir' => [CursoController::class, 'excluir'],
     '/alunos/listar' => [AlunoController::class, 'listar'],
+    '/api/cursos' => [CursoApiController::class, 'listar'],
 ];

@@ -15,5 +15,13 @@ return [
     'new-course' => 'New Course',
     'active'=> 'Active',
     'inactive'=>'Inactive',
+    'course-description' => 'Description',
+    'status' => "Status",
+    'student-name' => 'Name',
+    'student-registry' => 'Registrion',
+    'student-cpf' => 'CPF',
+    'student-email' => 'E-mail',
+    'student-created_at' => 'Registration date',
+
 ];
 

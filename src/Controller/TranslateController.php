@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-class TranslateController
+class TranslateController extends AbstractController
 {
     public function translate(): void
     {
@@ -12,6 +12,6 @@ class TranslateController
 
         $previousRoute = $_SERVER['HTTP_REFERER'];
 
-        header("location: {$previousRoute}");
+        parent::redirect($previousRoute);
     }
 }
