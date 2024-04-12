@@ -16,5 +16,9 @@ INSERT INTO course (name, description)
 VALUES 
 ('NextJS', 'O novo PHP');
 
+INSERT INTO student (name,password,email,createdAt,updatedAt,lastLogin)
+VALUES 
+('Aluno Minino', '123', 'minino@email.com', '2003/11/02','2003/11/02','2003/11/02');
+
 -- docker-compose exec mysql bash
 -- mysql -u user -ppassword

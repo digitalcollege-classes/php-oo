@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping\Table;
 #[Entity()] #[Table(name: 'student')]
 class Aluno
 {
+
     #[Id] #[GeneratedValue] #[Column(type: 'integer')]
     public int $id;
     
@@ -21,15 +22,18 @@ class Aluno
     public string $name;
 
     #[Column]
-    public string $registry;
-
-    #[Column]
-    public string $cpf;
+    public string $password;
 
     #[Column]
     public string $email;
 
     #[Column]
-    public DateTime $created_at;
+    public DateTime $createdAt;
+
+    #[Column]
+    public DateTime $updatedAt;
+
+    #[Column]
+    public DateTime $lastLogin;
 
 }
