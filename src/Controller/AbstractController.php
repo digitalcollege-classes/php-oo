@@ -21,7 +21,7 @@ abstract class AbstractController
         $entityManager = require_once dirname(__DIR__, 2).'/bootstrap.php';
         return $entityManager;
     }
-    public function redirect(string $url)
+    public function redirect(string $url) : void
     {
         header("location: {$url}");
     }
