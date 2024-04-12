@@ -15,6 +15,9 @@ return [
 
     '/translate' => [TranslateController::class, 'translate'],
 
+    '/alunos/listar' =>  [AlunoController::class, 'listar'],
+    '/alunos/excluir' => [AlunoController::class, 'excluir'],
+
     '/cursos/listar' => [CursoController::class, 'listar'],
     '/cursos/adicionar' => [CursoController::class, 'add'],
     '/cursos/editar' => [CursoController::class, 'editar'],
