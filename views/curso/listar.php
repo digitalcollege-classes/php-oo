@@ -1,3 +1,7 @@
+<div class="col">
+    <a href="/cursos/adicionar" class="btn btn-success"><?= translate('new-course') ?></a>
+</div>
+<hr>
 <table class="table table-hover table-striped">
     <thead class="table-dark">
         <tr>
@@ -28,3 +32,9 @@
 ?>
     </tbody>
 </table>
+<script>
+    function confirmDelete() {
+        return confirm("Tem certeza que deseja excluir este curso?");
+    }
+    
+</script>

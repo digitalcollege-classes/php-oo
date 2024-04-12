@@ -22,6 +22,11 @@
                 placeholder="<?=translate('input-type-here')?>"
             >
 
+            <select id="status" name="status" type="boolval" class="form-select" aria-label="Default select example">
+                <option value="1">Ativo</option>
+                <option value="0">Inativo</option>
+            </select>
+
             <button class="btn btn-outline-dark w-100 mt-3">
                 <?=translate('text-confirm')?>
             </button>

@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Table;
 
-#[Entity()] #[Table(name: 'course')]
-class Curso
+#[Entity()] #[Table(name: 'student')]
+class Aluno
 {
     #[Id] #[GeneratedValue] #[Column(type: 'integer')]
     public int $id;
@@ -20,14 +21,15 @@ class Curso
     public string $name;
 
     #[Column]
-    public string $description;
+    public string $registry;
 
-    #[Column(type: 'boolean')]
-    public bool $status;
+    #[Column]
+    public string $cpf;
 
+    #[Column]
+    public string $email;
 
+    #[Column]
+    public DateTime $created_at;
 
-    // public function __construct(string $name) {
-    //     $this->name = $name;
-    // }
 }
