@@ -2,6 +2,7 @@
 
 use App\Controller\CursoController;
 use App\Controller\HomeController;
+use App\Controller\LoginController;
 use App\Controller\ErrorController;
 use App\Controller\TranslateController;
 use App\Controller\AlunoController;
@@ -10,6 +11,7 @@ use App\Controller\Api\CursoApiController;
 return [
     // url a ser acessada => [Controller, metodo]
     '/' => [HomeController::class, 'index'],
+    '/login' => [LoginController::class, 'index'],
 
 
     '/erro-404' => [ErrorController::class, 'notFound'],
