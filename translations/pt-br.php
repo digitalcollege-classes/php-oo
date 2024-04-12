@@ -19,6 +19,7 @@ return [
     'student-registry' => 'Matrícula',
     'student-cpf' => 'CPF',
     'student-email' => 'E-mail',
-    'student-created_at' => 'Data da Matrícula'
+    'student-created_at' => 'Data da Matrícula',
+    'student-last-login' => 'Último Acesso'
 ];
 
