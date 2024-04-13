@@ -9,9 +9,9 @@
             <a href="/cursos/listar" class="btn btn-outline-dark"><?= translate('menu-courses'); ?></a>
         </nav>
     </div>
-    <div class="col">
+    <div class="col nav-user">
         <form>
-            <select name="" id="select-lang" class="form-select" style="float: right; width: 100px;">
+            <select name="" id="select-lang" class="form-select">
                 <?php
                     $lang = $_SESSION['language'] ?? 'pt-br';
                 ?>
@@ -20,6 +20,10 @@
                 <option <?php echo $lang === 'en'?'selected':'' ?> value="en">EN</option>
             </select>
         </form>
+        <div class="user-info">
+            <img src="/assets/img/avatar.png" />
+            <span><?= $_SESSION['user_name'] ?? 'usuário' ?></span>
+        </div>
     </div>
 </div>
 

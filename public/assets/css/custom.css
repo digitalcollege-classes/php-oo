@@ -1,3 +1,21 @@
 body {
     background-color: #EFEFEF;
 }
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-user > .user-info {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .nav-user {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+    }
+}
