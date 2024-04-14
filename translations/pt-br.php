@@ -19,6 +19,9 @@ return [
     'student-registry' => 'Matrícula',
     'student-cpf' => 'CPF',
     'student-email' => 'E-mail',
-    'student-created_at' => 'Data da Matrícula'
+    'student-created_at' => 'Data da Matrícula',
+    'student-new' => 'Novo Aluno',
+    'text-save' => 'Salvar',
+    'student-edit' => 'Editar Aluno'
 ];
 

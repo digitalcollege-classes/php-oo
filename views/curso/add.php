@@ -1,3 +1,7 @@
+<div class="col text-center">
+    <h4><?= translate('new-course') ?></h4>
+</div>
+<hr>
 <section class="row">
     <div class="col">
         <img src="/assets/img/add_course.svg" width="100%">
