@@ -23,7 +23,7 @@
                         <td>{$aluno->email}</td>
                         <td>{$aluno->created_at->format('d/m/Y')}</td>
                         <td>
-                            <a href='' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
+                            <a href='/alunos/editar' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
                             <a href='' class='btn btn-danger btn-sm'>{$buttonDelete}</a>
                         </td>
                     </tr>

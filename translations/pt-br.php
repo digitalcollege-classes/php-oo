@@ -15,6 +15,7 @@ return [
     'new-course' => 'Novo Curso',
     'course-description' => 'Descrição',
     'status' => "Status",
+    'student-id' => 'Matricula',
     'student-name' => 'Nome',
     'student-registry' => 'Matrícula',
     'student-cpf' => 'CPF',
