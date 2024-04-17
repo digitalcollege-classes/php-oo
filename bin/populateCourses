@@ -1,0 +1,22 @@
+<?php
+// populateCourses.php
+
+require_once __DIR__ . '/../src/Command/PopulateCoursesCommand.php';
+require_once __DIR__ . '/../src/Command/CommandInvoker.php';
+// require_once __DIR__ . '/../src/Command/registerCommands.php';
+
+$entityManager = require_once dirname(__DIR__) . '/bootstrap.php';
+
+// Criar instância do CommandInvoker
+$invoker = new CommandInvoker();
+
+// Adicionar o comando PopulateCoursesCommand ao CommandInvoker
+$invoker->addCommand('PopulateCoursesCommand', new PopulateCoursesCommand($entityManager));
+
+if ($argc < 2) {
+    echo "Uso: php populateCourses.php <comando>\n";
+    exit(1);
+}
+
+$commandName = $argv[1];
+$invoker->runCommand($commandName);

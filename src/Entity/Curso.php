@@ -25,9 +25,40 @@ class Curso
     #[Column(type: 'boolean')]
     public bool $status;
 
+    // Getters
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
 
-    // public function __construct(string $name) {
-    //     $this->name = $name;
-    // }
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    public function getStatus(): bool
+    {
+        return $this->status;
+    }
+
+    // Setters
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    public function setStatus(bool $status): void
+    {
+        $this->status = $status;
+    }
 }
