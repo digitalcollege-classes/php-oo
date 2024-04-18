@@ -24,11 +24,12 @@
                         <td>{$aluno->created_at->format('d/m/Y')}</td>
                         <td>
                             <a href='' class='btn btn-warning btn-sm'>{$buttonEdit}</a>
-                            <a href='' class='btn btn-danger btn-sm'>{$buttonDelete}</a>
+                            <a href='/alunos/excluir?id={$aluno->id}' class='btn btn-danger btn-sm'>{$buttonDelete}</a>
                         </td>
                     </tr>
                 ";
             } 
         ?>
+        
     </tbody>
 </table>
