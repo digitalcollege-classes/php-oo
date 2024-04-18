@@ -10,12 +10,14 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
 
-#[Entity] #[Table(name: 'curso')]
-class Curso
+#[Entity] #[Table(name: 'turma')]
+class Turma
 {
     #[Id] #[GeneratedValue] #[Column(type: 'integer')]
     public ?int $id = null;
@@ -29,16 +31,21 @@ class Curso
     #[Column(type: 'boolean')]
     public bool $status;
 
-    #[ManyToMany(targetEntity: Disciplina::class)]
-    #[JoinTable(name: 'curso_disciplina')]
-    public Collection $disciplinas;
+    #[ManyToMany(targetEntity: Aluno::class)]
+    #[JoinTable(name: 'alunos_curso')]
+    public Collection $alunos;
 
-    public function __construct(string $name, string $description)
+    #[ManyToOne(targetEntity: Curso::class)]
+    #[JoinColumn(name: 'curso_id', referencedColumnName: 'id')]
+    public Curso $curso;
+
+    public function __construct(string $name, string $description, Curso $curso)
     {
         $this->name = $name;
         $this->description = $description;
         $this->status = true;
-        $this->disciplinas = new ArrayCollection();
+        $this->alunos = new ArrayCollection();
+        $this->curso = $curso;
     }
 }
 

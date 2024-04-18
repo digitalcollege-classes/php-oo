@@ -4,7 +4,7 @@ include "../vendor/autoload.php";
 
 session_start();
 
-$routes = include "../config/routes.php";
+$routes = new App\Router\Router();
 
 // ----------------------------------------------------------
 //TODO: Mover essa configuracao pra outro lugar
@@ -21,14 +21,4 @@ function translate(string $key): string
 }
 // -----------------------------------------------------------
 
-$url = explode('?', $_SERVER['REQUEST_URI'])[0];
-
-if (false === isset($routes[$url])) {
-    header('location: /erro-404');
-    exit;
-}
-
-$controller = $routes[$url][0];
-$method = $routes[$url][1];
-
-(new $controller())->$method();
+$routes->getRoute();
