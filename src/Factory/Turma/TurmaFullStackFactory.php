@@ -8,9 +8,10 @@ use App\Entity\Curso;
 use App\Entity\Aluno;
 use App\Entity\Disciplina;
 use App\Entity\Turma;
+use App\Factory\Turma\AbstractTurmaFactory;
 use DateTime;
 
-class CursoFullStackFactory implements AbstractTurmaFactory
+class TurmaFullStackFactory implements AbstractTurmaFactory
 {
     public function createCurso(
         string $nomeCurso, 
@@ -41,9 +42,10 @@ class CursoFullStackFactory implements AbstractTurmaFactory
     public function createTurma(
         string $name, 
         string $description, 
-        Curso $curso 
+        Curso $curso,
+        array $alunos
     ): Turma
     {
-        return new Turma($name, $description, $curso);
+        return new Turma($name, $description, $curso, $alunos);
     }
 }

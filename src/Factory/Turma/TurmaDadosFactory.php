@@ -41,9 +41,10 @@ class TurmaDadosFactory implements AbstractTurmaFactory
     public function createTurma(
       string $name, 
       string $description, 
-      Curso $curso 
+      Curso $curso,
+      array $alunos
     ): Turma
     {
-      return new Turma($name, $description, $curso);
+      return new Turma($name, $description, $curso, $alunos);
     }
 }

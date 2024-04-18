@@ -11,8 +11,27 @@ use App\Entity\Turma;
 
 interface AbstractTurmaFactory
 {
-    public function createCurso(): Curso;
-    public function createTurma(): Turma;
-    public function createAluno(): Aluno;
-    public function createDisciplina(): Disciplina;
+    public function createCurso(
+        string $nomeCurso,
+        string $descricaoCurso,
+    ): Curso;
+
+    public function createTurma(
+        string $name, 
+        string $description, 
+        Curso $curso ,
+        array $alunos
+    ): Turma;
+
+    public function createAluno(
+        string $nomeAluno,
+        string $descricaoAluno,
+        string $cpfAluno,
+        string $emailAluno,
+    ): Aluno;
+
+    public function createDisciplina(
+        string $nomeDisciplina,
+        int $cargaHoraria
+    ): Disciplina;
 }

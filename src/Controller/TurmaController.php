@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Factory\Turma\TurmaFullStackFactory;
-use App\Entity\Aluno;
 use App\Entity\Turma;
+use App\Factory\Curso\TurmaFullStackFactory;
+use DateTime;
 
 final class TurmaController extends AbstractController
 {
@@ -24,17 +24,16 @@ final class TurmaController extends AbstractController
             }
 
             foreach ($alunosData as $alunoData) {
-                $aluno = new Aluno(
+                $alunos[] = $factory->createAluno(
                     $alunoData['name'],
                     $alunoData['registry'],
                     $alunoData['cpf'],
                     $alunoData['email'],
                     new DateTime()
                 );
-                $curso->addAluno($aluno);
             }
 
-            $turma = $factory->createTurma($turmaData['name'], $turmaData['description'], $curso);
+            $turma = $factory->createTurma($turmaData['name'], $turmaData['description'], $curso, $alunos);
             
             return $turma;
         }
